@@ -1,5 +1,5 @@
 import React from "react"
-import {Container, Card, Section, Link, Logo, Info, Button} from "./styles/main";
+import {Container, Card, Section, Wrapper, Logo, Info, Button} from "./styles/main";
 
 
 export default function Main ({children, ...restProps}) {
@@ -14,12 +14,12 @@ Main.Card = function MainCard({ children, ...restProps }) {
 	return <Card {...restProps}>{children}</Card>;
 };
 
-Main.Link = function MainLink({ children, ...restProps }) {
-	return <Link {...restProps}>{children}</Link>;
+Main.Wrapper = function MainWrapper({ children, ...restProps }) {
+	return <Wrapper {...restProps}>{children}</Wrapper>;
 };
 
 Main.Logo = function MainLogo({src,...restProps}) {
-    return <Logo {...restProps} />
+    return <Logo {...restProps} src={src}/>
 }
 
 Main.Info = function MainInfo({children, ...restProps}) {

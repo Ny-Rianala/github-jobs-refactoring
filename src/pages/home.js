@@ -2,6 +2,7 @@ import React from "react";
 import HeaderContainer from "../containers/header";
 import { Form, Header} from "../components";
 import MainContainer from "../containers/main";
+import SearchContainer from "../containers/search";
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
                 </Form>
             </HeaderContainer>
             <MainContainer></MainContainer>
+            {/* <SearchContainer></SearchContainer> */}
         </>
     )
 }

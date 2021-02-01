@@ -7,7 +7,9 @@ export default function HeaderContainer({ children }) {
 			<Header.Title>
                 Github Jobs
             </Header.Title>
-            {children}
+			<Header.Background>
+              {children}
+			</Header.Background>
 		</Header>
 	);
 }

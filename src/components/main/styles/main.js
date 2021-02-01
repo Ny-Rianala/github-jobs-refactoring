@@ -15,7 +15,7 @@ export const Card = styled.div`
     flex-direction: row;
 `
 
-export const Link = styled.a`
+export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     padding: 12px;
@@ -58,5 +58,4 @@ export const Button = styled.button`
     line-height: 1rem;
     color: #334680;
     font-size: 16px;
-}
 `
