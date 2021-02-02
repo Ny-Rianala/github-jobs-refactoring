@@ -1,9 +1,14 @@
 import React from "react";
-import {Container, Input, Submit} from "./styles/form";
+import {Container,Group, Input, Submit} from "./styles/form";
 
 export default function Form({children, ...restProps}) {
     return <Container {...restProps}>{children}</Container>
 } 
+
+
+Form.Group = function FormGroup({ children, ...restProps }) {
+	return <Group {...restProps}>{children}</Group>;
+};
 
 Form.Input = function FormInput({ children, ...restProps }) {
 	return <Input {...restProps}>{children}</Input>;

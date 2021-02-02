@@ -15,9 +15,8 @@ export const Card = styled.div`
     flex-direction: row;
 `
 
-export const Card = styled.div`
-    display: flex;
-    flex-direction: row;
+export const List = styled.a`
+    text-decoration: none;
 `
 
 export const Wrapper = styled.div`

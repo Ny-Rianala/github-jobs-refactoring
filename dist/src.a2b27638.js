@@ -35826,7 +35826,12 @@ const Container = _styledComponents.default.div`
 `;
 exports.Container = Container;
 const Background = _styledComponents.default.div`
-    background-image: url("./backgroundImg.png");
+    border-radius: 12px;
+    margin-right: 12px;
+    margin-left: 12px;
+    background-size: cover;
+    padding-bottom: 20px;
+    background-image: url("https://raw.githubusercontent.com/onja-org/github-jobs/main/backgroundImg.png");
 `;
 exports.Background = Background;
 const Title = _styledComponents.default.h1`
@@ -35875,7 +35880,7 @@ Header.Title = function HeaderTitle({
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Submit = exports.Input = exports.Container = void 0;
+exports.Submit = exports.Input = exports.Group = exports.Container = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -35884,34 +35889,42 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const Container = _styledComponents.default.section`
 	display: flex;
 	flex-direction: row;
-	background-color: ghostwhite;
     margin-left: 60px;
 `;
 exports.Container = Container;
+const Group = _styledComponents.default.form`
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 4px;
+    padding-left: 30px;
+    padding-right: 103px;
+    padding-bottom: -28px;
+    width: 55%;
+    margin-left: 19px;
+`;
+exports.Group = Group;
 const Input = _styledComponents.default.input`
-    margin-left: 10px;
-    margin-right: -82px;
-	padding-left: 42px;
-	padding-right: 133px;
-    padding-top: 19px;
-	padding-bottom: 22px;
+    margin-left: 15px;
+    margin-right: 24px;
+    padding: 0 4px;
+    height: 32px;
     border: none;
-    background-color: white;
-
-&:last-of-type {
-    margin-bottom: 30px;
-}
+    background: transparent;
+    margin-top: 19px;
+    margin-bottom: 22px
 `;
 exports.Input = Input;
 const Submit = _styledComponents.default.button`
     background-color: rgb(76,165,238);
-    padding: 16px 19px;
+    padding: 14px 27px;
     border: none;
     color: white;
     margin-top: 7px;
     border-radius: 10px;
-    max-height: 50%;
-    margin-bottom: 35px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
 
 &:disabled {
     opacity: 0.5;
@@ -35939,6 +35952,13 @@ function Form({
   return /*#__PURE__*/_react.default.createElement(_form.Container, restProps, children);
 }
 
+Form.Group = function FormGroup({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_form.Group, restProps, children);
+};
+
 Form.Input = function FormInput({
   children,
   ...restProps
@@ -35958,7 +35978,7 @@ Form.Submit = function FormInput({
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Button = exports.Info = exports.Logo = exports.Wrapper = exports.Card = exports.Section = exports.Container = void 0;
+exports.Button = exports.Info = exports.Logo = exports.Wrapper = exports.List = exports.Card = exports.Section = exports.Container = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -35979,6 +35999,10 @@ const Card = _styledComponents.default.div`
     flex-direction: row;
 `;
 exports.Card = Card;
+const List = _styledComponents.default.a`
+    text-decoration: none;
+`;
+exports.List = List;
 const Wrapper = _styledComponents.default.div`
     display: flex;
     align-items: center;
@@ -36104,21 +36128,68 @@ Main.List = function MainList({
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Container = exports.Title = void 0;
+exports.LabelOnCheckbox = exports.FormCheckbox = exports.FormInput = exports.InputSearch = exports.Form = exports.InputLabel = exports.Checkbox = exports.Container = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const Title = _styledComponents.default.h1`
-    color: blue;
-`;
-exports.Title = Title;
 const Container = _styledComponents.default.section`
     display: flex;
     flex-direction: column;
+    padding-bottom: 210px;
 `;
 exports.Container = Container;
+const Checkbox = _styledComponents.default.div`
+    display: flex;
+    flex-direction: row;
+    margin-top: 29px;
+    margin-left: 20px;
+`;
+exports.Checkbox = Checkbox;
+const InputLabel = _styledComponents.default.div`
+    margin-left: 12px;
+`;
+exports.InputLabel = InputLabel;
+const Form = _styledComponents.default.div`
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    padding-bottom: 100px;
+`;
+exports.Form = Form;
+const InputSearch = _styledComponents.default.input`
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-right: 72px;
+    padding-left: 25px;
+    padding-right: 146px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    width: 160px;
+    height: 14px;
+    background-color: #fff;
+    border-radius: 4px;
+`;
+exports.InputSearch = InputSearch;
+const FormInput = _styledComponents.default.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    margin-top: 35px;
+`;
+exports.FormInput = FormInput;
+const FormCheckbox = _styledComponents.default.form`
+    display: flex;
+    flex-direction: column;
+`;
+exports.FormCheckbox = FormCheckbox;
+const LabelOnCheckbox = _styledComponents.default.div`
+    display: flex;
+    flex-direction: row;
+`;
+exports.LabelOnCheckbox = LabelOnCheckbox;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/search/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -36140,11 +36211,53 @@ function Search({
   return /*#__PURE__*/_react.default.createElement(_search.Container, restProps, children);
 }
 
-Search.Title = function SearchTitle({
+Search.Form = function SearchForm({
   children,
   ...restProps
 }) {
-  return /*#__PURE__*/_react.default.createElement(_search.Title, restProps, children);
+  return /*#__PURE__*/_react.default.createElement(_search.Form, restProps, children);
+};
+
+Search.Checkbox = function SearchCheckbox({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_search.Checkbox, restProps, children);
+};
+
+Search.InputSearch = function SearchInputSearch({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_search.InputSearch, restProps, children);
+};
+
+Search.FormInput = function SearchFormInput({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_search.FormInput, restProps, children);
+};
+
+Search.InputLabel = function SearchInputLabel({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_search.InputLabel, restProps, children);
+};
+
+Search.FormCheckbox = function SearchFormCheckbox({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_search.FormCheckbox, restProps, children);
+};
+
+Search.LabelOnCheckbox = function SearchLabelOnCheckbox({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_search.LabelOnCheckbox, restProps, children);
 };
 },{"react":"node_modules/react/index.js","./styles/search":"src/components/search/styles/search.js"}],"src/components/index.js":[function(require,module,exports) {
 "use strict";
@@ -36296,13 +36409,46 @@ var _react = _interopRequireDefault(require("react"));
 
 var _components = require("../components");
 
+var _search = require("../components/search/styles/search");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function SearchContainer() {
   console.log(_components.Search);
-  return /*#__PURE__*/_react.default.createElement(_components.Search, null, /*#__PURE__*/_react.default.createElement(_components.Search.Title, null, "Hello"));
+  return /*#__PURE__*/_react.default.createElement(_components.Search, null, /*#__PURE__*/_react.default.createElement(_components.Search.Form, null, /*#__PURE__*/_react.default.createElement(_components.Search.Checkbox, null, /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox",
+    id: "fulltimeId"
+  }), /*#__PURE__*/_react.default.createElement(_components.Search.InputLabel, {
+    htmlFor: "fulltime"
+  }, "Full time")), /*#__PURE__*/_react.default.createElement(_components.Search.FormInput, null, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "city"
+  }, "Location"), /*#__PURE__*/_react.default.createElement(_components.Search.InputSearch, {
+    type: "text",
+    id: "city",
+    placeholder: "city, code zip"
+  })), /*#__PURE__*/_react.default.createElement(_components.Search.FormCheckbox, null, /*#__PURE__*/_react.default.createElement(_components.Search.LabelOnCheckbox, null, /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox",
+    id: "new york"
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "city"
+  }, "New York")), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "city"
+  }, "San "), /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox",
+    id: "san"
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "city"
+  }, "Berlin"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox",
+    id: "berlin"
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "city"
+  }, "London"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox",
+    id: "london"
+  }))));
 }
-},{"react":"node_modules/react/index.js","../components":"src/components/index.js"}],"src/pages/home.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components":"src/components/index.js","../components/search/styles/search":"src/components/search/styles/search.js"}],"src/pages/home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36325,9 +36471,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 console.log(_search.default);
 
 function Home() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_components.Header.Title, null), /*#__PURE__*/_react.default.createElement(_components.Form, null, /*#__PURE__*/_react.default.createElement(_components.Form.Input, {
-    placeholder: "Title, company"
-  }), /*#__PURE__*/_react.default.createElement(_components.Form.Submit, null, "Search")), /*#__PURE__*/_react.default.createElement(_search.default, null)), /*#__PURE__*/_react.default.createElement(_main.default, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_components.Header.Title, null), /*#__PURE__*/_react.default.createElement(_components.Form.Group, null, /*#__PURE__*/_react.default.createElement(_components.Form.Input, {
+    placeholder: "title, company"
+  }), /*#__PURE__*/_react.default.createElement(_components.Form.Submit, null, "Search"))), /*#__PURE__*/_react.default.createElement(_search.default, null), /*#__PURE__*/_react.default.createElement(_main.default, null));
 }
 },{"react":"node_modules/react/index.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js","../containers/main":"src/containers/main.js","../containers/search":"src/containers/search.js"}],"src/pages/jobinfo.js":[function(require,module,exports) {
 "use strict";
@@ -36461,7 +36607,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49337" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56853" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

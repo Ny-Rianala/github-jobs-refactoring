@@ -11,12 +11,12 @@ export default function Home() {
         <>
             <HeaderContainer>
                 <Header.Title></Header.Title>
-                <Form>
-                    <Form.Input placeholder="Title, company" /> 
+                <Form.Group>
+                    <Form.Input placeholder="title, company" /> 
                     <Form.Submit>Search</Form.Submit>        
-                </Form>
-            <SearchContainer></SearchContainer>
+                </Form.Group>
             </HeaderContainer>
+            <SearchContainer></SearchContainer>
             <MainContainer></MainContainer>
         </>
     )

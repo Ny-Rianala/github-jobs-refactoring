@@ -1,13 +1,38 @@
 import React from "react";
-import {Title, Container} from "./styles/search";
+import {Container, Checkbox, Form, InputSearch, FormInput, InputLabel, FormCheckbox, LabelOnCheckbox} from "./styles/search";
 
 export default function Search ({children, ...restProps}) {
     return <Container {...restProps}>{children}</Container>
 }
 
-Search.Title = function SearchTitle({children, ...restProps}) {
-    return <Title {...restProps}>{children}</Title>
+
+Search.Form = function SearchForm({children, ...restProps}) {
+    return <Form {...restProps}>{children}</Form>
 }
 
 
+Search.Checkbox = function SearchCheckbox({children, ...restProps}) {
+    return <Checkbox {...restProps}>{children}</Checkbox>
+}
 
+
+Search.InputSearch = function SearchInputSearch({children, ...restProps}) {
+    return <InputSearch {...restProps}>{children}</InputSearch>
+}
+
+
+Search.FormInput = function SearchFormInput({children, ...restProps}) {
+    return <FormInput {...restProps}>{children}</FormInput>
+}
+
+Search.InputLabel = function SearchInputLabel({children, ...restProps}) {
+    return <InputLabel {...restProps}>{children}</InputLabel>
+}
+
+Search.FormCheckbox = function SearchFormCheckbox({children, ...restProps}) {
+    return <FormCheckbox {...restProps}>{children}</FormCheckbox>
+}
+
+Search.LabelOnCheckbox = function SearchLabelOnCheckbox({children, ...restProps}) {
+    return <LabelOnCheckbox {...restProps}>{children}</LabelOnCheckbox>
+}
