@@ -10,8 +10,9 @@ export const Background = styled.div`
     border-radius: 12px;
     margin-right: 12px;
     margin-left: 12px;
+    padding-top: 41px;
+    padding-bottom: 42px;
     background-size: cover;
-    padding-bottom: 20px;
     background-image: url("https://raw.githubusercontent.com/onja-org/github-jobs/main/backgroundImg.png");
 `
     

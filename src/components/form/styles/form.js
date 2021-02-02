@@ -44,5 +44,4 @@ export const Submit = styled.button`
 
 &:disabled {
     opacity: 0.5;
-}
 `;

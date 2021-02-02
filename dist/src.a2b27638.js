@@ -8522,6 +8522,7 @@ const GlobalStyles = (0, _styledComponents.createGlobalStyle)`
         font-family: 'Helvetica Neue', Helvetica, sans-serif;
         margin: 0;
         font-family: 16px;
+        background-color: #f6f7fb;
     }
     li > a {
         list-style: none;
@@ -35829,8 +35830,9 @@ const Background = _styledComponents.default.div`
     border-radius: 12px;
     margin-right: 12px;
     margin-left: 12px;
+    padding-top: 41px;
+    padding-bottom: 42px;
     background-size: cover;
-    padding-bottom: 20px;
     background-image: url("https://raw.githubusercontent.com/onja-org/github-jobs/main/backgroundImg.png");
 `;
 exports.Background = Background;
@@ -35928,7 +35930,6 @@ const Submit = _styledComponents.default.button`
 
 &:disabled {
     opacity: 0.5;
-}
 `;
 exports.Submit = Submit;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/form/index.js":[function(require,module,exports) {
@@ -36128,7 +36129,7 @@ Main.List = function MainList({
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.LabelOnCheckbox = exports.FormCheckbox = exports.FormInput = exports.InputSearch = exports.Form = exports.InputLabel = exports.Checkbox = exports.Container = void 0;
+exports.LabelForCity = exports.LabelOnCheckbox = exports.FormCheckbox = exports.FormInput = exports.InputSearch = exports.Form = exports.InputLabel = exports.Checkbox = exports.Container = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -36152,6 +36153,9 @@ const InputLabel = _styledComponents.default.div`
 `;
 exports.InputLabel = InputLabel;
 const Form = _styledComponents.default.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 18px;
     height: 18px;
     margin-right: 12px;
@@ -36171,6 +36175,10 @@ const InputSearch = _styledComponents.default.input`
     height: 14px;
     background-color: #fff;
     border-radius: 4px;
+    border: none;
+    box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.39);
+    -webkit-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.39);
+    -moz-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.39);
 `;
 exports.InputSearch = InputSearch;
 const FormInput = _styledComponents.default.div`
@@ -36183,6 +36191,9 @@ exports.FormInput = FormInput;
 const FormCheckbox = _styledComponents.default.form`
     display: flex;
     flex-direction: column;
+    margin-left: 12px;
+    padding-top: 27px;
+    gap: 5px;
 `;
 exports.FormCheckbox = FormCheckbox;
 const LabelOnCheckbox = _styledComponents.default.div`
@@ -36190,6 +36201,12 @@ const LabelOnCheckbox = _styledComponents.default.div`
     flex-direction: row;
 `;
 exports.LabelOnCheckbox = LabelOnCheckbox;
+const LabelForCity = _styledComponents.default.label`
+    color: grey;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+`;
+exports.LabelForCity = LabelForCity;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/search/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -36258,6 +36275,13 @@ Search.LabelOnCheckbox = function SearchLabelOnCheckbox({
   ...restProps
 }) {
   return /*#__PURE__*/_react.default.createElement(_search.LabelOnCheckbox, restProps, children);
+};
+
+Search.LabelForCity = function FormLabelForCity({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_search.LabelForCity, restProps, children);
 };
 },{"react":"node_modules/react/index.js","./styles/search":"src/components/search/styles/search.js"}],"src/components/index.js":[function(require,module,exports) {
 "use strict";
@@ -36420,7 +36444,7 @@ function SearchContainer() {
     id: "fulltimeId"
   }), /*#__PURE__*/_react.default.createElement(_components.Search.InputLabel, {
     htmlFor: "fulltime"
-  }, "Full time")), /*#__PURE__*/_react.default.createElement(_components.Search.FormInput, null, /*#__PURE__*/_react.default.createElement("label", {
+  }, "Full time")), /*#__PURE__*/_react.default.createElement(_components.Search.FormInput, null, /*#__PURE__*/_react.default.createElement(_components.Search.LabelForCity, {
     htmlFor: "city"
   }, "Location"), /*#__PURE__*/_react.default.createElement(_components.Search.InputSearch, {
     type: "text",
@@ -36431,22 +36455,22 @@ function SearchContainer() {
     id: "new york"
   }), /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "city"
-  }, "New York")), /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "city"
-  }, "San "), /*#__PURE__*/_react.default.createElement("input", {
+  }, "New York")), /*#__PURE__*/_react.default.createElement(_components.Search.LabelOnCheckbox, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "checkbox",
     id: "san"
   }), /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "city"
-  }, "Berlin"), /*#__PURE__*/_react.default.createElement("input", {
+  }, "San Francisco")), /*#__PURE__*/_react.default.createElement(_components.Search.LabelOnCheckbox, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "checkbox",
     id: "berlin"
   }), /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "city"
-  }, "London"), /*#__PURE__*/_react.default.createElement("input", {
+  }, "Berlin")), /*#__PURE__*/_react.default.createElement(_components.Search.LabelOnCheckbox, null, /*#__PURE__*/_react.default.createElement("input", {
     type: "checkbox",
     id: "london"
-  }))));
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "city"
+  }, "London")))));
 }
 },{"react":"node_modules/react/index.js","../components":"src/components/index.js","../components/search/styles/search":"src/components/search/styles/search.js"}],"src/pages/home.js":[function(require,module,exports) {
 "use strict";
@@ -36607,7 +36631,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56853" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58757" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Checkbox, Form, InputSearch, FormInput, InputLabel, FormCheckbox, LabelOnCheckbox} from "./styles/search";
+import {Container, Checkbox, Form, InputSearch, FormInput, InputLabel, FormCheckbox, LabelOnCheckbox, LabelForCity} from "./styles/search";
 
 export default function Search ({children, ...restProps}) {
     return <Container {...restProps}>{children}</Container>
@@ -35,4 +35,8 @@ Search.FormCheckbox = function SearchFormCheckbox({children, ...restProps}) {
 
 Search.LabelOnCheckbox = function SearchLabelOnCheckbox({children, ...restProps}) {
     return <LabelOnCheckbox {...restProps}>{children}</LabelOnCheckbox>
+}
+
+Search.LabelForCity = function FormLabelForCity({children, ...restProps}) {
+	return <LabelForCity {...restProps}>{children}</LabelForCity>
 }

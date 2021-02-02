@@ -18,6 +18,9 @@ export const InputLabel = styled.div `
 `
 
 export const Form = styled.div `
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 18px;
     height: 18px;
     margin-right: 12px;
@@ -37,6 +40,10 @@ export const InputSearch = styled.input `
     height: 14px;
     background-color: #fff;
     border-radius: 4px;
+    border: none;
+    box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.39);
+    -webkit-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.39);
+    -moz-box-shadow: 10px 11px 5px -8px rgba(0,0,0,0.39);
 `
 
 export const FormInput = styled.div `
@@ -49,10 +56,19 @@ export const FormInput = styled.div `
 export const FormCheckbox = styled.form `
     display: flex;
     flex-direction: column;
+    margin-left: 12px;
+    padding-top: 27px;
+    gap: 5px;
 `
 
 
 export const LabelOnCheckbox = styled.div `
     display: flex;
     flex-direction: row;
+`
+
+export const LabelForCity = styled.label `
+    color: grey;
+    text-transform: uppercase;
+    padding-bottom: 10px;
 `
