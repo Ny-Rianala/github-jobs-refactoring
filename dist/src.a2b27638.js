@@ -35952,7 +35952,7 @@ Form.Submit = function FormInput({
 }) {
   return /*#__PURE__*/_react.default.createElement(_form.Submit, restProps, children);
 };
-},{"react":"node_modules/react/index.js","./styles/form":"src/components/form/styles/form.js"}],"src/components/Main/styles/main.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/form":"src/components/form/styles/form.js"}],"src/components/main/styles/main.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36025,7 +36025,7 @@ const Button = _styledComponents.default.button`
     font-size: 16px;
 `;
 exports.Button = Button;
-},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/Main/index.js":[function(require,module,exports) {
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/main/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36091,13 +36091,20 @@ Main.Button = function MainButton({
 }) {
   return /*#__PURE__*/_react.default.createElement(_main.Button, restProps, children);
 };
-},{"react":"node_modules/react/index.js","./styles/main":"src/components/Main/styles/main.js"}],"src/components/search/styles/search.js":[function(require,module,exports) {
+
+Main.List = function MainList({
+  children,
+  ...restProps
+}) {
+  return /*#__PURE__*/_react.default.createElement(_main.List, restProps, children);
+};
+},{"react":"node_modules/react/index.js","./styles/main":"src/components/main/styles/main.js"}],"src/components/search/styles/search.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Title = void 0;
+exports.Container = exports.Title = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -36107,6 +36114,11 @@ const Title = _styledComponents.default.h1`
     color: blue;
 `;
 exports.Title = Title;
+const Container = _styledComponents.default.section`
+    display: flex;
+    flex-direction: column;
+`;
+exports.Container = Container;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/search/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -36132,8 +36144,7 @@ Search.Title = function SearchTitle({
   children,
   ...restProps
 }) {
-  /*#__PURE__*/
-  _react.default.createElement(_search.Title, restProps, children);
+  return /*#__PURE__*/_react.default.createElement(_search.Title, restProps, children);
 };
 },{"react":"node_modules/react/index.js","./styles/search":"src/components/search/styles/search.js"}],"src/components/index.js":[function(require,module,exports) {
 "use strict";
@@ -36156,7 +36167,7 @@ Object.defineProperty(exports, "Form", {
 Object.defineProperty(exports, "Main", {
   enumerable: true,
   get: function () {
-    return _Main.default;
+    return _main.default;
   }
 });
 Object.defineProperty(exports, "Search", {
@@ -36170,12 +36181,12 @@ var _header = _interopRequireDefault(require("./header"));
 
 var _form = _interopRequireDefault(require("./form"));
 
-var _Main = _interopRequireDefault(require("./Main"));
+var _main = _interopRequireDefault(require("./main"));
 
 var _search = _interopRequireDefault(require("./search"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./header":"src/components/header/index.js","./form":"src/components/form/index.js","./Main":"src/components/Main/index.js","./search":"src/components/search/index.js"}],"src/containers/header.js":[function(require,module,exports) {
+},{"./header":"src/components/header/index.js","./form":"src/components/form/index.js","./main":"src/components/main/index.js","./search":"src/components/search/index.js"}],"src/containers/header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36288,6 +36299,7 @@ var _components = require("../components");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function SearchContainer() {
+  console.log(_components.Search);
   return /*#__PURE__*/_react.default.createElement(_components.Search, null, /*#__PURE__*/_react.default.createElement(_components.Search.Title, null, "Hello"));
 }
 },{"react":"node_modules/react/index.js","../components":"src/components/index.js"}],"src/pages/home.js":[function(require,module,exports) {
@@ -36310,10 +36322,12 @@ var _search = _interopRequireDefault(require("../containers/search"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+console.log(_search.default);
+
 function Home() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_components.Header.Title, null), /*#__PURE__*/_react.default.createElement(_components.Form, null, /*#__PURE__*/_react.default.createElement(_components.Form.Input, {
     placeholder: "Title, company"
-  }), /*#__PURE__*/_react.default.createElement(_components.Form.Submit, null, "Search"))), /*#__PURE__*/_react.default.createElement(_main.default, null));
+  }), /*#__PURE__*/_react.default.createElement(_components.Form.Submit, null, "Search")), /*#__PURE__*/_react.default.createElement(_search.default, null)), /*#__PURE__*/_react.default.createElement(_main.default, null));
 }
 },{"react":"node_modules/react/index.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js","../containers/main":"src/containers/main.js","../containers/search":"src/containers/search.js"}],"src/pages/jobinfo.js":[function(require,module,exports) {
 "use strict";
@@ -36447,7 +36461,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63105" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49337" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

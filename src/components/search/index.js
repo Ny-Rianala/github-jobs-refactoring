@@ -6,7 +6,7 @@ export default function Search ({children, ...restProps}) {
 }
 
 Search.Title = function SearchTitle({children, ...restProps}) {
-    <Title {...restProps}>{children}</Title>
+    return <Title {...restProps}>{children}</Title>
 }
 
 

@@ -4,6 +4,8 @@ import { Form, Header} from "../components";
 import MainContainer from "../containers/main";
 import SearchContainer from "../containers/search";
 
+console.log(SearchContainer);
+
 export default function Home() {
     return (
         <>
@@ -13,9 +15,9 @@ export default function Home() {
                     <Form.Input placeholder="Title, company" /> 
                     <Form.Submit>Search</Form.Submit>        
                 </Form>
+            <SearchContainer></SearchContainer>
             </HeaderContainer>
             <MainContainer></MainContainer>
-            {/* <SearchContainer></SearchContainer> */}
         </>
     )
 }

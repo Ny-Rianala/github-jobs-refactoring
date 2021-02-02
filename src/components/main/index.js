@@ -1,5 +1,5 @@
 import React from "react"
-import {Container, Card, Section, Wrapper, Logo, Info, Button} from "./styles/main";
+import {Container, Card, Section, Wrapper, Logo, Info, Button, List} from "./styles/main";
 
 
 export default function Main ({children, ...restProps}) {
@@ -28,4 +28,9 @@ Main.Info = function MainInfo({children, ...restProps}) {
 
 Main.Button = function MainButton ({children, ...restProps}) {
     return <Button {...restProps}>{children}</Button>
+}
+
+
+Main.List = function MainList ({children, ...restProps}) {
+    return <List {...restProps}>{children}</List>
 }
